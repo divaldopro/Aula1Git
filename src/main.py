@@ -39,12 +39,6 @@ async def delete_estudante(id_estudante: int):
     return id_estudante > 0
 
 
-@app.get("/")
-# 127.0.0.1:8000/
-async def root():
-    return {"message": "TESTANDO O DOCKER"}
-
-
 # Nome do arquivo onde os dados serão salvos
 arquivo_csv = 'clientes.csv'
 
