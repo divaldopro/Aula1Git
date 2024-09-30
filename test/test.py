@@ -3,26 +3,39 @@ from unittest.mock import patch
 
 
 def test_root():
-    assert root() == {"message": "Hello World"}
+    result = root()
+    yield result
+    assert result == {"message": "Hello World"}
 
 
 def test_funcaoteste():
     with patch('random.randint', retrun_value=123456):
         result = funcaoteste()
+        yield result
     assert result == {"teste": True, "num_aleatorio": 123456}
 
 def test_create_estudante():
     estudante_teste = Estudante(name="Divaldo", curso="ADS", ativo=False)
-    assert estudante_teste == create_estudante()
+    result = create_estudante(estudante_teste)
+    yield result
+    assert estudante_teste == result
 
 def teste_update_estudante_negativo():
-    assert not update_estudante(-5)
+    result = update_estudante(-5)
+    yield result
+    assert not result
 
 def teste_update_estudante_positivo():
-    assert update_estudante(10)
+    result = update_estudante(10)
+    yield result
+    assert result
 
 def teste_delete_estudante_negativo():
-    assert not delete_estudante(-5)
+    result = delete_estudante(-5)
+    yield result
+    assert not result
 
 def teste_delete_estudante_positivo():
-    assert delete_estudante(5)
+    result = delete_estudante(5)
+    yield result
+    assert result
