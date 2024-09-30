@@ -33,6 +33,3 @@ jobs:
             pip install pytest pytest-cov
             pytest test/test.py -doctest-modules --junitxml=junit/test-result.xml --cov=com --cov-report=xml --cov-report=html
             
-
-                  linter: pylint
-
